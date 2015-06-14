@@ -1,0 +1,30 @@
+body {
+    font-size:12px;
+}
+#search {
+    float:left;
+    width:100%;
+}
+#person_company_box {
+    float:left;
+    clear:left;
+    width:100%;
+    height:auto;
+    top:60px;
+    z-index:49;
+    padding-bottom:15px;
+    position:relative;
+}
+#messages {
+    float:left;
+    width:100%;
+    position:relative;
+    top:60px;
+}
+.avatar {
+    width:150px;
+    height:150px;
+    -moz-border-radius:75px;
+    -webkit-border-radius:75px;
+    border-radius:75px;
+}

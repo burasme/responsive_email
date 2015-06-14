@@ -1,0 +1,20 @@
+#search {
+    float:left;
+    width:40%;
+    right:auto;
+}
+#person_company_box {
+    float:left;
+    clear:left;
+    width:40%;
+    height:100%;
+    top:0px;
+}
+#person_company {
+    padding-top:60px;
+}
+#messages {
+    float:right;
+    width:60%;
+    top:0;
+}

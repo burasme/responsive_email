@@ -1,0 +1,172 @@
+html {
+    height:100%;
+    width:100%;
+}
+
+body {
+    font-family:'Open Sans', sans-serif;
+    width:100%;
+    height:100%;
+    font-size:15px;
+}
+
+a:hover {
+    text-decoration:underline !important;
+}
+
+#search {
+    float:right;
+    position:fixed;
+    right:0px;
+    width:70%;
+    background:darkgray;
+    height:60px;
+    text-align:center;
+    z-index:50;
+}
+
+#search_input {
+    width:85%;
+    font-family:'Open Sans', sans-serif;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    font-size:15px;
+    margin-top:13px;
+    padding:5px 0 5px 30px;
+    color:gray;
+    background:white url(../images/search.png) 6px 5px no-repeat;
+}
+
+#person_company_box {
+    position:fixed;
+    background:gray;
+    float:left;
+    width:30%;
+    height:100%;
+}
+
+#person_company {
+    float:left;
+    color:white;
+    line-height:25px;
+    width:100%;
+}
+
+.name,
+.email,
+.company {
+    float:left;
+    clear:both;
+    padding:5px 15px 5px 15px;
+}
+
+.name {
+    font-size:20px;
+    line-height:35px;
+}
+
+.logo {
+    display:block;
+    margin:0 auto;
+    max-width:150px;
+    max-height:150px;
+    margin-top:20px;
+}
+
+.avatar {
+    display:block;
+    clear:both;
+    width:250px;
+    height:250px;
+    margin:0 auto;
+    background:lightgray;
+    -moz-border-radius:125px;
+    -webkit-border-radius:125px;
+    border-radius:125px;
+    margin-top:25px;
+}
+
+#messages {
+    float:right;
+    width:70%;
+    position:relative;
+    top:60px;
+}
+
+.message,
+.message_body {
+    float:left;
+    clear:left;
+    width:100%;
+    line-height:25px;
+    padding:7px 0 7px 0;
+}
+
+.message_body,
+.message.clicked,
+.message.clicked:hover {
+    background:#e3ffe7 !important;
+}
+
+.message:hover,
+.message:nth-child(odd):hover {
+    background:lightyellow;
+    cursor:pointer;
+}
+
+.message:nth-child(odd) {
+    background:#f7f7f7;
+}
+
+.subject_title,
+.from_title,
+.to_title {
+    float:left;
+    clear:both;
+    margin-left:15px;
+    padding-right:10px;
+}
+
+.cc_title {
+    float:left;
+    clear:both;
+    padding-right:10px;
+}
+
+span.subject {
+    float:left;
+    text-decoration:none;
+    color:black;
+}
+
+a.from {
+    float:left;
+    text-decoration:none;
+    color:blue;
+}
+
+.to_container {
+    float:left;
+    clear:none;
+}
+
+.cc_container {
+    float:left;
+    clear:none;
+    margin-left:15px;
+}
+
+a.to,
+a.cc {
+
+    text-decoration:none;
+    color:blue;
+}
+
+.body {
+    float:left;
+    clear:none;
+    color:black;
+    margin-left:15px;
+}
