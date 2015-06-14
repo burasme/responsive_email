@@ -36,7 +36,7 @@ function getPerson(email) {
 	} else {
 	    companyLine = "<span class='company'><strong>Company: </strong>" + data.company["name"]
 	    + " &mdash; " + data.company["description"]
-	    + ", <img class='logo' src='" + data.company["logo"] + "' alt='' title='' /></span>";
+	    + "</span><img class='logo' src='" + data.company["logo"] + "' alt='' title='' />";
 	}
 	
 	$("#person_company").html("<span class='name'>" + data.name + "</span>"
