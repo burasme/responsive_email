@@ -140,7 +140,7 @@ span.subject {
     color:black;
 }
 
-a.from {
+.from {
     float:left;
     text-decoration:none;
     color:blue;
