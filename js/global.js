@@ -18,7 +18,7 @@ function getMessages() {
 	      + "<strong class='subject_title'>Subject: </strong>"
 	      + "<span class='subject'>" + data[index].subject + "</span>"
 	      + "<strong class='from_title'>From: </strong>"
-	      + "<a class='from' href='#'>" + data[index].from + "</a></div>").appendTo("#messages");
+	      + "<span class='from'>" + data[index].from + "</span></div>").appendTo("#messages");
 	    
 	    index++;
 	});
@@ -77,13 +77,6 @@ $(document).ready(function() {
 	    + "</div>");
 	
 	getPerson(emailData[messageID][1]);
-    });
-    
-    $("#messages").on("click", ".from", function() {
-	var email = $(this).html();	
-	getPerson(email);
-	$(this).blur();
-	return false;
     });
     
     $("#messages").on("click", ".to", function() {
