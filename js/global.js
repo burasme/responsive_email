@@ -31,7 +31,7 @@ function getPerson(email) {
     var url = "https://morning-falls-3769.herokuapp.com/api/people/" + email;
     
     $.getJSON(url, function(data) {
-	if (data.company == null) {
+	if (data.company === null) {
 	    companyLine = "";
 	} else {
 	    companyLine = "<span class='company'><strong>Company: </strong>" + data.company["name"]
@@ -52,13 +52,13 @@ $(document).ready(function() {
     getMessages();
     
     $("#search_input").on("click", function() {
-	if ($(this).val() == "search") {
+	if ($(this).val() === "search") {
 	    $(this).val("");
 	}
     });
     
     $("#search_input").on("blur", function() {
-	if ($(this).val() == "") {
+	if ($(this).val() === "") {
 	    $(this).val("search");
 	}
     });
