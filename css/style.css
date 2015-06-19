@@ -134,7 +134,7 @@ a:hover {
     padding-right:10px;
 }
 
-span.subject {
+.subject {
     float:left;
     text-decoration:none;
     color:black;
