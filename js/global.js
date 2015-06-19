@@ -1,4 +1,18 @@
 var emailData = new Array();
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+};
+
+function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+      	return entityMap[s];
+    });
+}
 
 function getMessages() {
     $.getJSON("https://morning-falls-3769.herokuapp.com/api/messages", function(data) {
@@ -7,12 +21,12 @@ function getMessages() {
 	$.each(data, function(id, from, to, cc, subject, body) {
 	    emailData[index] = new Array();
 	    
-	    emailData[index][0] = data[index].id;
-	    emailData[index][1] = data[index].from;
-	    emailData[index][2] = data[index].to.toString().replace(/,/g , "</a>, <a class='to' href='#'>");
-	    emailData[index][3] = data[index].cc.toString().replace(/,/g , "</a>, <a class='cc' href='#'>");
-	    emailData[index][4] = data[index].subject;
-	    emailData[index][5] = data[index].body;
+	    emailData[index][0] = escapeHTML(data[index].id);
+	    emailData[index][1] = escapeHTML(data[index].from);
+	    emailData[index][2] = escapeHTML(data[index].to.toString().replace(/,/g , "</a>, <a class='to' href='#'>"));
+	    emailData[index][3] = escapeHTML(data[index].cc.toString().replace(/,/g , "</a>, <a class='cc' href='#'>"));
+	    emailData[index][4] = escapeHTML(data[index].subject);
+	    emailData[index][5] = escapeHTML(data[index].body);
 	    
 	    $("<div class='message' id='m" + data[index].id + "'>"
 	      + "<strong class='subject_title'>Subject: </strong>"
@@ -34,15 +48,15 @@ function getPerson(email) {
 	if (data.company === null) {
 	    companyLine = "";
 	} else {
-	    companyLine = "<span class='company'><strong>Company: </strong>" + data.company["name"]
-	    + " &mdash; " + data.company["description"]
-	    + "</span><img class='logo' src='" + data.company["logo"] + "' alt='' title='' />";
+	    companyLine = "<span class='company'><strong>Company: </strong>" + escapeHTML(data.company["name"])
+	    + " &mdash; " + escapeHTML(data.company["description"])
+	    + "</span><img class='logo' src='" + escapeHTML(data.company["logo"]) + "' alt='' title='' />";
 	}
 	
-	$("#person_company").html("<span class='name'>" + data.name + "</span>"
+	$("#person_company").html("<span class='name'>" + escapeHTML(data.name) + "</span>"
 	    + companyLine
-	    + "<span class='email'><strong>Email: </strong>" + data.email + "</span>"
-	    + "<img class='avatar' alt='' title='' src='" + data.avatar + "' />");
+	    + "<span class='email'><strong>Email: </strong>" + escapeHTML(data.email) + "</span>"
+	    + "<img class='avatar' alt='' title='' src='" + escapeHTML(data.avatar) + "' />");
     }).fail(function( jqxhr, textStatus, error ) {
 	getPerson(email);
     });
