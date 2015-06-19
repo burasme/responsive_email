@@ -23,8 +23,8 @@ function getMessages() {
 	    
 	    emailData[index][0] = escapeHTML(data[index].id);
 	    emailData[index][1] = escapeHTML(data[index].from);
-	    emailData[index][2] = escapeHTML(data[index].to.toString().replace(/,/g , "</a>, <a class='to' href='#'>"));
-	    emailData[index][3] = escapeHTML(data[index].cc.toString().replace(/,/g , "</a>, <a class='cc' href='#'>"));
+	    emailData[index][2] = escapeHTML(data[index].to.toString()).replace(/,/g , "</a>, <a class='to' href='#'>");
+	    emailData[index][3] = escapeHTML(data[index].cc.toString()).replace(/,/g , "</a>, <a class='cc' href='#'>");
 	    emailData[index][4] = escapeHTML(data[index].subject);
 	    emailData[index][5] = escapeHTML(data[index].body);
 	    
