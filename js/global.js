@@ -28,11 +28,11 @@ function getMessages() {
 	    emailData[index][4] = escapeHTML(data[index].subject);
 	    emailData[index][5] = escapeHTML(data[index].body);
 	    
-	    $("<div class='message' id='m" + data[index].id + "'>"
+	    $("<div class='message' id='m" + emailData[index][0] + "'>"
 	      + "<strong class='subject_title'>Subject: </strong>"
-	      + "<span class='subject'>" + data[index].subject + "</span>"
+	      + "<span class='subject'>" + emailData[index][4] + "</span>"
 	      + "<strong class='from_title'>From: </strong>"
-	      + "<span class='from'>" + data[index].from + "</span></div>").appendTo("#messages");
+	      + "<span class='from'>" + emailData[index][1] + "</span></div>").appendTo("#messages");
 	    
 	    index++;
 	});
