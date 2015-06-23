@@ -21,10 +21,10 @@ function getMessages() {
 	$.each(data, function(id, from, to, cc, subject, body) {
 	    emailData[index] = new Array();
 	    
-	    emailData[index][0] = escapeHTML(data[index].id);
-	    emailData[index][1] = escapeHTML(data[index].from);
-	    emailData[index][2] = escapeHTML(data[index].to.toString()).replace(/,/g , "</a>, <a class='to' href='#'>");
-	    emailData[index][3] = escapeHTML(data[index].cc.toString()).replace(/,/g , "</a>, <a class='cc' href='#'>");
+	    emailData[index][0] = data[index].id;
+	    emailData[index][1] = data[index].from;
+	    emailData[index][2] = data[index].to.toString().replace(/,/g , "</a>, <a class='to' href='#'>");
+	    emailData[index][3] = data[index].cc.toString().replace(/,/g , "</a>, <a class='cc' href='#'>");
 	    emailData[index][4] = escapeHTML(data[index].subject);
 	    emailData[index][5] = escapeHTML(data[index].body);
 	    
@@ -50,13 +50,13 @@ function getPerson(email) {
 	} else {
 	    companyLine = "<span class='company'><strong>Company: </strong>" + escapeHTML(data.company["name"])
 	    + " &mdash; " + escapeHTML(data.company["description"])
-	    + "</span><img class='logo' src='" + escapeHTML(data.company["logo"]) + "' alt='' title='' />";
+	    + "</span><img class='logo' src='" + data.company["logo"] + "' alt='' title='' />";
 	}
 	
 	$("#person_company").html("<span class='name'>" + escapeHTML(data.name) + "</span>"
 	    + companyLine
-	    + "<span class='email'><strong>Email: </strong>" + escapeHTML(data.email) + "</span>"
-	    + "<img class='avatar' alt='' title='' src='" + escapeHTML(data.avatar) + "' />");
+	    + "<span class='email'><strong>Email: </strong>" + data.email + "</span>"
+	    + "<img class='avatar' alt='' title='' src='" + data.avatar + "' />");
     }).fail(function( jqxhr, textStatus, error ) {
 	getPerson(email);
     });
